@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import useWishlistStore from '../store/wishlistStore'
 import useCartStore from '../store/cartStore'
 
 function Wishlist() {
@@ -82,4 +81,4 @@ function Wishlist() {
   )
 }
 
-export default Wishlist
+export default Wishlist;

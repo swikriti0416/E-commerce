@@ -1,57 +1,3 @@
-// import { Link } from "react-router-dom";
-
-
-// function Home() {
-//   return (
-//     <div className="min-h-screen flex items-center bg-gray-50 px-6">
-//       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-//         <div>
-//           <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
-//             Shop Better with <span className="text-blue-600">ShopEasy</span>
-//           </h1>
-
-//           <p className="text-xl text-gray-600 mb-8">
-//             Discover quality products curated just for you.
-//           </p>
-
-//           <Link
-//             to="/products"
-//             className="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition"
-//           >
-//             Start Shopping
-//           </Link>
-//         </div>
-
-//         <div className="flex justify-center">
-//           <img
-//             // src="src/assets/hero.jpg"
-//             alt="Online shopping"
-//             className="rounded-2xl shadow-xl w-full max-w-md object-cover"
-//           />
-//         </div>
-//       </div>
-//     </div>
-
-//     {/* CTA Section */}
-//       <div className="bg-gray-100 py-16">
-//         <div className="max-w-7xl mx-auto px-6 text-center">
-//           <h2 className="text-4xl font-bold mb-4 text-gray-800">
-//             Ready to Start Shopping?
-//           </h2>
-//           <p className="text-xl text-gray-600 mb-8">
-//             Browse our collection of quality products
-//           </p>
-//           <Link 
-//             to="/products"
-//             className="inline-block bg-blue-600 text-white px-12 py-4 rounded-lg text-xl font-bold hover:bg-blue-700 transition shadow-lg"
-//           >
-//             View All Products
-//           </Link>
-//         </div>
-//   );
-// }
-
-// export default Home;
 import { Link } from 'react-router-dom'
 
 function Home() {
@@ -192,4 +138,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;

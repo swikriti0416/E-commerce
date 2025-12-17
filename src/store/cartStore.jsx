@@ -9,3 +9,5 @@ export const useCartStore = create((set) => ({
   removeFromCart: (id) => 
     set((state) => ({ cart: state.cart.filter(p => p.id !== id) })), // remove item
 }));
+
+export default useCartStore;

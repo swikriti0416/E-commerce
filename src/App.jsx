@@ -1,23 +1,37 @@
+import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import Navbar from "./components/Navbar/Navbar.jsx";
+import Hero from "./components/Hero/Hero.jsx";
+import Home from "./pages/Home.jsx";
+import Products from "./pages/Products.jsx";
+import ProductDetail from "./pages/ProductDetail.jsx";
+import Cart from "./pages/Cart.jsx";
+import Wishlist from "./pages/wishlist";
 
-import { Routes, Route } from 'react-router-dom';
-
-// All imports must start with ./
-import Header from './components/Header.jsx';
-import Home from './pages/Home.jsx';
-import Products from './pages/Products.jsx';
-import ProductDetail from './pages/ProductDetail.jsx';  // ← correct path
-import Cart from './pages/Cart.jsx';
 
 export default function App() {
+  const [orderPopup, setOrderPopup] = useState(false);
+
+  const handleOrderPopup = () => {
+    setOrderPopup(!orderPopup);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
+      <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
+        
+        <Navbar handleOrderPopup={handleOrderPopup} />
+        <Hero handleOrderPopup={handleOrderPopup} />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+        </Routes>
+
+      </div>
     </div>
   );
 }
