@@ -1,3 +1,4 @@
+// ProductCard.jsx (Child Component)
 import { Link } from 'react-router-dom'
 
 function ProductCard({ product }) {

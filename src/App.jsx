@@ -2,11 +2,13 @@ import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Hero from "./components/Hero/Hero.jsx";
-import Home from "./pages/Home.jsx";
+// import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import Cart from "./pages/Cart.jsx";
 import Wishlist from "./pages/wishlist";
+import Banner from "./components/Banner/Banner.jsx";
+
 
 
 export default function App() {
@@ -24,7 +26,8 @@ export default function App() {
         <Hero handleOrderPopup={handleOrderPopup} />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Products />} />
+          <Route path="/" element={<Navbar />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
