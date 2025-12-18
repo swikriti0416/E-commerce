@@ -19,7 +19,7 @@ const DropdownLinks = [
 
 const Navbar = ({ handleOrderPopup }) => {
   return (
-    <div className="shadow-md bg-white duration-200 relative z-40 overflow-visible">
+    <div className="bg-gradient-to-r from-primary to-secondary text-white py-1 px-4 rounded-full flex items-center gap-2">
       {/* upper Navbar */}
       <div className="bg-primary/40 py-2">
         <div className="container flex justify-between items-center px-4 mx-auto">
@@ -54,7 +54,7 @@ const Navbar = ({ handleOrderPopup }) => {
             <li key={item.id}>
               <a
                 href={item.link}
-                className="px-4 hover:text-primary"
+                className="bg-gradient-to-r from-primary to-secondary text-white py-1 px-4 rounded-full flex items-center gap-2"
               >
                 {item.name}
               </a>
@@ -68,7 +68,7 @@ const Navbar = ({ handleOrderPopup }) => {
               <FaCaretDown className="group-hover:rotate-180 transition-transform" />
             </span>
 
-            <div className="absolute left-0 top-full mt-2 hidden group-hover:block bg-white shadow-md rounded-md w-[200px] z-[9999]">
+            <div className="absolute left-0 top-full mt-2 hidden group-hover:block bg-black shadow-md rounded-md w-[200px] z-[9999]">
               {DropdownLinks.map((item) => (
                 <a
                   key={item.id}
