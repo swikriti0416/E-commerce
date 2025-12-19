@@ -1,86 +1,80 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { IoMdSearch } from "react-icons/io";
-import { FaCartShopping } from "react-icons/fa6";
-import { FaCaretDown } from "react-icons/fa";
-
-const Menu = [
-  { id: 1, name: "Home", link: "/#" },
-  { id: 2, name: "Top Rated", link: "/#services" },
-  { id: 3, name: "Kids Wear", link: "/#" },
-  { id: 4, name: "Mens Wear", link: "/#" },
-  { id: 5, name: "Electronics", link: "/#" },
-];
-
-const DropdownLinks = [
-  { id: 1, name: "Trending Products", link: "/#" },
-  { id: 2, name: "Best Selling", link: "/#" },
-  { id: 3, name: "Top Rated", link: "/#" },
-];
+import { FaCartShopping, FaHeart } from "react-icons/fa6";
 
 const Navbar = ({ handleOrderPopup }) => {
   return (
-    <div className="bg-gradient-to-r from-primary to-secondary text-white py-1 px-4 rounded-full flex items-center gap-2">
-      {/* upper Navbar */}
-      <div className="bg-primary/40 py-2">
-        <div className="container flex justify-between items-center px-4 mx-auto">
-          <a href="#" className="font-bold text-2xl sm:text-3xl">
-            Shopsy
-          </a>
+    <div className="bg-white shadow-md sticky top-0 z-50">
+      {/* Main Navbar */}
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between gap-6">
+          {/* Logo - Left */}
+          <Link to="/" className="flex items-center gap-3">
+            <span className="font-bold text-3xl text-primary">Shopsy</span>
+          </Link>
 
-          <div className="flex items-center gap-4">
+          {/* Search Bar - Center */}
+          <div className="flex-1 max-w-md mx-4">
             <div className="relative group">
               <input
                 type="text"
-                placeholder="search"
-                className="w-[140px] sm:w-[200px] group-hover:w-[180px] sm:group-hover:w-[300px] transition-all duration-300 rounded-full border border-gray-300 px-3 py-1 focus:outline-none"
+                placeholder="Search products..."
+                className="w-full px-5 py-3 pl-12 pr-10 rounded-full border border-gray-300 focus:outline-none focus:border-primary bg-gray-50 transition-all duration-300 group-hover:border-primary"
               />
-              <IoMdSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500" />
+              <IoMdSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl" />
             </div>
+          </div>
 
-            <button
-              onClick={handleOrderPopup}
-              className="bg-gradient-to-r from-primary to-secondary text-white py-1 px-4 rounded-full flex items-center gap-2"
-            >
-              <FaCartShopping />
-            </button>
+          {/* Right Icons & Menu */}
+          <div className="flex items-center gap-6">
+            {/* Desktop Menu: Home & Category */}
+            <ul className="hidden md:flex items-center gap-8">
+              <li>
+                <Link
+                  to="/"
+                  className="text-gray-700 font-medium hover:text-primary transition"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/categorypage"
+                  className="text-gray-700 font-medium hover:text-primary transition"
+                >
+                  Category
+                </Link>
+              </li>
+            </ul>
+
+            {/* Icons: Wishlist & Cart */}
+            <div className="flex items-center gap-5 text-gray-700">
+              {/* Wishlist */}
+              <Link to="/wishlist" className="relative group">
+                <FaHeart className="text-2xl hover:text-red-500 transition" />
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                  3
+                </span>
+              </Link>
+
+              {/* Cart - Links to Cart Page */}
+              <Link to="/cart" className="relative group">
+                <FaCartShopping className="text-2xl hover:text-primary transition" />
+                {/* Cart Item Count Badge */}
+                <span className="absolute -top-2 -right-2 bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  2
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* lower Navbar */}
-      <div className="flex justify-center">
-        <ul className="sm:flex hidden items-center gap-4 py-2">
-          {Menu.map((item) => (
-            <li key={item.id}>
-              <a
-                href={item.link}
-                className="bg-gradient-to-r from-primary to-secondary text-white py-1 px-4 rounded-full flex items-center gap-2"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
-
-          {/* Dropdown */}
-          <li className="group relative cursor-pointer">
-            <span className="sm:flex hidden items-center gap-4 py-2">
-              Trending Products
-              <FaCaretDown className="group-hover:rotate-180 transition-transform" />
-            </span>
-
-            <div className="absolute left-0 top-full mt-2 hidden group-hover:block bg-black shadow-md rounded-md w-[200px] z-[9999]">
-              {DropdownLinks.map((item) => (
-                <a
-                  key={item.id}
-                  href={item.link}
-                  className="block px-4 py-2 hover:bg-primary/20"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </li>
-        </ul>
+        {/* Mobile Menu (Optional - shown on small screens) */}
+        {/* <div className="md:hidden flex justify-center mt-4 gap-8 text-gray-700">
+          <Link to="/" className="font-medium hover:text-primary">Home</Link>
+          <Link to="/categorypage" className="font-medium hover:text-primary">Category</Link>
+        </div> */}
       </div>
     </div>
   );
