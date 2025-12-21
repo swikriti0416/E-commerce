@@ -5,7 +5,7 @@ import ProductsData from "../Data/products.json";
 
 const Products = () => {
   return (
-    <div className="pt-14 pb-12 bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 py-16">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10 max-w-[600px] mx-auto">

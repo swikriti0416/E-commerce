@@ -20,7 +20,7 @@ const Navbar = ({ handleOrderPopup }) => {
         <div className="flex items-center justify-between gap-6">
           {/* Logo - Left */}
           <Link to="/" className="flex items-center gap-3">
-            <span className="font-bold text-3xl text-primary">Shopsy</span>
+            <span className="font-bold text-3xl text-primary">ShopEasy</span>
           </Link>
 
           {/* Search Bar - Center */}

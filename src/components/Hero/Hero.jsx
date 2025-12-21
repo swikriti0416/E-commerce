@@ -28,9 +28,8 @@ const Hero = ({ handleOrderPopup }) => {
     };
 
     return (
-        <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-gray-100 flex justify-center items-center duration-200">
-            {/* Removed: dark:bg-gray-950 dark:text-white */}
-
+        <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]  bg-gradient-to-br from-orange-50 via-white to-amber-50 flex justify-center items-center duration-200">
+           
             <div className="container pb-8 sm:pb-0 w-full">
                 <Slider {...settings}>
                     {ImageList.map((data) => (

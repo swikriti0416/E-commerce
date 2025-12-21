@@ -2,15 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaPlus, FaMinus, FaTrash, FaArrowLeft } from "react-icons/fa";
 import { useCartStore } from "../store/cartStore";
+import Checkout from "./Checkout";
 
 const Cart = () => {
-  const {
-    cart,
-    addToCart,
-    decreaseQuantity,
-    removeFromCart,
-    getTotalPrice,
-  } = useCartStore();
+  const { cart, addToCart, decreaseQuantity, removeFromCart, getTotalPrice } =
+    useCartStore();
 
   // Total items count
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -36,7 +32,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 py-16">
       <div className="max-w-6xl mx-auto px-6">
         <h1 className="text-5xl font-bold text-center mb-12 text-primary">
           Your Shopping Cart
@@ -64,7 +60,7 @@ const Cart = () => {
                 </div>
 
                 {/* Product Info */}
-                <div className="flex-grow flex flex-col">
+                <div className="bg-gradient-to-br from-orange-150 to-white rounded-3xl p-8 h-fit border border-orange-100 shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {item.name}
                   </h3>
@@ -72,7 +68,6 @@ const Cart = () => {
                     ${item.price.toFixed(2)} each
                   </p>
 
-                  
                   <div className="flex items-center gap-4 mt-auto">
                     <button
                       onClick={() => decreaseQuantity(item.id)}
@@ -113,7 +108,7 @@ const Cart = () => {
           </div>
 
           {/* Order Summary */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 h-fit">
+          <div className="bg-gradient-to-br from-orange-150 to-white rounded-3xl p-8 h-fit border border-orange-100 shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
               Order Summary
             </h2>
@@ -122,9 +117,7 @@ const Cart = () => {
               {/* Subtotal */}
               <div className="flex justify-between">
                 <span>Subtotal ({totalItems} items)</span>
-                <span className="font-bold">
-                  ${getTotalPrice().toFixed(2)}
-                </span>
+                <span className="font-bold">${getTotalPrice().toFixed(2)}</span>
               </div>
 
               {/* Shipping */}
@@ -145,9 +138,11 @@ const Cart = () => {
             </div>
 
             {/* Checkout Button */}
-            <button className="w-full mt-10 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xl font-bold py-5 rounded-full shadow-lg hover:opacity-90 transition-all duration-300 active:scale-95">
-              Proceed to Checkout
-            </button>
+            <Link to="/checkout" className="block w-full">
+              <button className="w-full mt-10 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xl font-bold py-5 rounded-full shadow-lg hover:opacity-90 transition-all duration-300 active:scale-95">
+                Proceed to Checkout
+              </button>
+            </Link>
 
             {/* Continue Shopping */}
             <Link

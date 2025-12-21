@@ -7,7 +7,7 @@ const CategoryPage = () => {
   const categories = [...new Set(products.map((product) => product.category))];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 py-16">
       <div className="container mx-auto px-6">
         {/* Page Title */}
         <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-gray-900">

@@ -9,6 +9,8 @@ import Wishlist from "./pages/wishlist";
 // import Banner from "./components/Banner/Banner.jsx";
 import CategoryPage from "./pages/categorypage.jsx";
 // import cartStore from "./store/cartStore.jsx";
+import Checkout from "./pages/Checkout.jsx";
+import OrderSuccess from "./pages/OrderSuccess.jsx";
 
 export default function App() {
   const [orderPopup, setOrderPopup] = useState(false);
@@ -43,7 +45,8 @@ export default function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/categorypage" element={<CategoryPage />} />
-         
+          <Route path="/Checkout" element={<Checkout />} />
+          <Route path="/ordersuccess" element={<OrderSuccess />} />
          
         </Routes>
 
