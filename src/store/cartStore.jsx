@@ -1,52 +1,60 @@
-//global state ho yo so (This file makes the cart work on every page (no need to pass props everywhere))
+// Yo file le cart lai global banancha ra haru page ma kaam garcha (props pass garna pardaina)
 import { create } from 'zustand';
 
 export const useCartStore = create((set) => ({
-  cart: [], // Array of items: { ...product, quantity: 1 }
+  // localStorage bata load garne, chaina bhane empty array
+  cart: JSON.parse(localStorage.getItem("cart") || "[]"),
 
-  // Add product to cart or increase quantity if already there
   addToCart: (product) =>
     set((state) => {
       const existingItem = state.cart.find((item) => item.id === product.id);
 
+      let newCart;
       if (existingItem) {
-        // Already in cart → increase quantity
-        return {
-          cart: state.cart.map((item) =>
-            item.id === product.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          ),
-        };
+        // Pahile nai cha → quantity badhaune
+        newCart = state.cart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
       } else {
-        // New product → add with quantity 1
-        return { cart: [...state.cart, { ...product, quantity: 1 }] };
+        // Naya product → quantity 1 rakhera add garne
+        newCart = [...state.cart, { ...product, quantity: 1 }];
       }
+
+      // localStorage ma save garne
+      localStorage.setItem("cart", JSON.stringify(newCart));
+      return { cart: newCart };
     }),
 
-  // Remove entire product from cart
+  // Pura product hataune
   removeFromCart: (id) =>
-    set((state) => ({
-      cart: state.cart.filter((item) => item.id !== id),
-    })),
+    set((state) => {
+      const newCart = state.cart.filter((item) => item.id !== id);
+      localStorage.setItem("cart", JSON.stringify(newCart));
+      return { cart: newCart };
+    }),
 
-  // Optional: Decrease quantity (useful in Cart page)
+  // Quantity ghataune
   decreaseQuantity: (id) =>
-    set((state) => ({
-      cart: state.cart
+    set((state) => {
+      const newCart = state.cart
         .map((item) =>
           item.id === id
             ? { ...item, quantity: item.quantity - 1 }
             : item
         )
-        .filter((item) => item.quantity > 0), // remove if quantity becomes 0
-    })),
+        .filter((item) => item.quantity > 0); // quantity 0 bhayo bhane hataune
 
-  // Optional: Get total items count (for cart badge)
-  getTotalItems: () => 
+      localStorage.setItem("cart", JSON.stringify(newCart));
+      return { cart: newCart };
+    }),
+
+  // Cart badge ko lagi total item count
+  getTotalItems: () =>
     useCartStore.getState().cart.reduce((total, item) => total + item.quantity, 0),
 
-  // Optional: Get total price
+  // Total price nikalne
   getTotalPrice: () =>
     useCartStore.getState().cart.reduce((total, item) => total + item.price * item.quantity, 0),
 }));

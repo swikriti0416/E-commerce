@@ -2,10 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping, FaHeart } from "react-icons/fa6";
+import { useCartStore } from "../../store/cartStore";
+import { useWishlistStore } from "../../store/wishlistStore";
+
+
 
 const Navbar = ({ handleOrderPopup }) => {
+  const cartCount = useCartStore((state) => state.getTotalItems());
+  const wishlistCount = useWishlistStore((state) => state.getWishlistCount());
+
+
+
   return (
-    <div className="bg-white shadow-md sticky top-0 z-50">
+    <div className="bg-orange-200 shadow-md sticky top-0 z-50">
       {/* Main Navbar */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-6">
@@ -54,7 +63,7 @@ const Navbar = ({ handleOrderPopup }) => {
               <Link to="/wishlist" className="relative group">
                 <FaHeart className="text-2xl hover:text-red-500 transition" />
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                  3
+                 {wishlistCount}
                 </span>
               </Link>
 
@@ -63,7 +72,7 @@ const Navbar = ({ handleOrderPopup }) => {
                 <FaCartShopping className="text-2xl hover:text-primary transition" />
                 {/* Cart Item Count Badge */}
                 <span className="absolute -top-2 -right-2 bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                  2
+                  {cartCount}
                 </span>
               </Link>
             </div>

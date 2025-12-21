@@ -26,8 +26,8 @@ const Cart = () => {
           Looks like you haven't added any products to your cart yet.
         </p>
         <Link
-          to="/"
-          className="bg-indigo-600 text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-indigo-700 transition-all hover:scale-105 shadow-lg"
+          to="/products"
+          className="inline-block bg-primary text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-secondary transition transform hover:scale-105 shadow-lg"
         >
           ← Continue Shopping
         </Link>
@@ -38,7 +38,7 @@ const Cart = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-6xl mx-auto px-6">
-        <h1 className="text-5xl font-bold text-center mb-12 text-gray-900">
+        <h1 className="text-5xl font-bold text-center mb-12 text-primary">
           Your Shopping Cart
         </h1>
 
@@ -72,7 +72,7 @@ const Cart = () => {
                     ${item.price.toFixed(2)} each
                   </p>
 
-                  {/* Quantity Controls */}
+                  
                   <div className="flex items-center gap-4 mt-auto">
                     <button
                       onClick={() => decreaseQuantity(item.id)}
@@ -151,7 +151,7 @@ const Cart = () => {
 
             {/* Continue Shopping */}
             <Link
-              to="/"
+              to="/categorypage"
               className="block text-center mt-8 text-gray-600 hover:text-gray-900 font-medium flex items-center justify-center gap-2 transition"
             >
               <FaArrowLeft />

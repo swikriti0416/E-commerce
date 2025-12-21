@@ -14,14 +14,14 @@ const ImageList = [
 
 const Hero = ({ handleOrderPopup }) => {
     const settings = {
-        dots: true,
+        dots: false,
         arrows: true,
         infinite: true,
         speed: 800,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1000,        // slowed down a bit (was 1000ms — too fast)
+        autoplaySpeed: 1000,        
         pauseOnHover: true,
         fade: true,
         accessibility: true,
