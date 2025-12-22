@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import { ThemeProvider } from "./components/Navbar/Theme.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import Products from "./pages/Products.jsx";
@@ -11,6 +12,7 @@ import CategoryPage from "./pages/categorypage.jsx";
 // import cartStore from "./store/cartStore.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import OrderSuccess from "./pages/OrderSuccess.jsx";
+
 
 export default function App() {
   const [orderPopup, setOrderPopup] = useState(false);

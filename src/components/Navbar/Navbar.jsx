@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping, FaHeart } from "react-icons/fa6";
@@ -8,6 +8,10 @@ import { useWishlistStore } from "../../store/wishlistStore";
 
 
 const Navbar = ({ handleOrderPopup }) => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
   const cartCount = useCartStore((state) => state.getTotalItems());
   const wishlistCount = useWishlistStore((state) => state.getWishlistCount());
 
@@ -29,9 +33,11 @@ const Navbar = ({ handleOrderPopup }) => {
               <input
                 type="text"
                 placeholder="Search products..."
-                className="w-full px-5 py-3 pl-12 pr-10 rounded-full border border-gray-300 focus:outline-none focus:border-primary bg-gray-50 transition-all duration-300 group-hover:border-primary"
+                value={searchQuery} 
+                onChange={handleSearchChange} 
+                className="w-full px-5 py-3 pl-12 pr-10 rounded-full border border-gray-900 focus:outline-none focus:border-primary bg-gray-5000 transition-all duration-300 group-hover:border-primary"
               />
-              <IoMdSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl" />
+              <IoMdSearch className="absolute left-4 top-1/2 -translate-y-1/2 space-y-6 text-x font-italic text-gray-700" />
             </div>
           </div>
 
