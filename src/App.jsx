@@ -12,6 +12,7 @@ import CategoryPage from "./pages/categorypage.jsx";
 // import cartStore from "./store/cartStore.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import OrderSuccess from "./pages/OrderSuccess.jsx";
+import { ToastContainer } from 'react-toastify';
 
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
+        <ToastContainer position="top-right" autoClose={3000} />
         
         {/* Navbar is OUTSIDE Routes, so it shows everywhere */}
         <Navbar handleOrderPopup={handleOrderPopup} />
