@@ -8,10 +8,10 @@ const Cart = () => {
   const { cart, addToCart, decreaseQuantity, removeFromCart, getTotalPrice } =
     useCartStore();
 
-  // Total items count
+  
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-  // Empty cart state
+  
   if (cart.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-20 px-6 text-center">
