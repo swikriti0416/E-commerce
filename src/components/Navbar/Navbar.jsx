@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMdSearch } from "react-icons/io";
-import { FaCartShopping, FaHeart } from "react-icons/fa6";
+import { FaCartShopping, FaHeart, FaUser } from "react-icons/fa6";
 import { useCartStore } from "../../store/cartStore";
 import { useWishlistStore } from "../../store/wishlistStore";
 import DarkMode from "./DarkMode.jsx";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const cartCount = useCartStore((state) => state.getTotalItems());
   const wishlistCount = useWishlistStore((state) => state.getWishlistCount());
@@ -20,13 +21,10 @@ const Navbar = () => {
     <div className="bg-orange-200 dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-300">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-6">
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <span className="font-bold text-3xl text-primary">ShopEasy</span>
-            {/* Note: If your 'text-primary' changes in dark mode, add: text-primary dark:text-primary-light */}
           </Link>
 
-          {/* Search */}
           <div className="flex-1 max-w-md mx-4">
             <div className="relative group">
               <input
@@ -40,46 +38,64 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Right Section */}
           <div className="flex items-center gap-6">
-            {/* Theme Toggle */}
             <DarkMode />
 
-            {/* Menu Links - Hidden on mobile */}
             <ul className="hidden md:flex items-center gap-8">
               <li>
-                <Link
-                  to="/"
-                  className="text-gray-700 dark:text-gray-200 font-medium hover:text-primary dark:hover:text-primary transition"
-                >
+                <Link to="/" className="text-gray-700 dark:text-gray-200 font-medium hover:text-primary transition">
                   Home
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/categorypage"
-                  className="text-gray-700 dark:text-gray-200 font-medium hover:text-primary dark:hover:text-primary transition"
-                >
+                <Link to="/categorypage" className="text-gray-700 dark:text-gray-200 font-medium hover:text-primary transition">
                   Category
                 </Link>
               </li>
             </ul>
 
-            {/* Wishlist */}
-            <Link to="/wishlist" className="relative group">
-              <FaHeart className="text-2xl text-gray-700 dark:text-gray-300 hover:text-red-500 transition" />
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                {wishlistCount}
-              </span>
-            </Link>
+            <div className="flex items-center gap-5 text-gray-700 dark:text-gray-200">
+              {/* My Account Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="flex items-center gap-2 hover:text-primary transition"
+                >
+                  <FaUser className="text-2xl" />
+                  <span className="hidden sm:inline">My Account</span>
+                </button>
 
-            {/* Cart */}
-            <Link to="/cart" className="relative group">
-              <FaCartShopping className="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary transition" />
-              <span className="absolute -top-2 -right-2 bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                {cartCount}
-              </span>
-            </Link>
+                {dropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-primary dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50">
+                    <Link
+                      to="/login"
+                      onClick={() => setDropdownOpen(false)}
+                      className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      Login
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              <Link to="/wishlist" className="relative group">
+                <FaHeart className="text-2xl hover:text-red-500 transition" />
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-5 h-5 px-1.5 flex items-center justify-center shadow-md">
+                    {wishlistCount}
+                  </span>
+                )}
+              </Link>
+
+              <Link to="/cart" className="relative group">
+                <FaCartShopping className="text-2xl hover:text-primary transition" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-primary text-white text-xs font-bold rounded-full min-w-5 h-5 px-1.5 flex items-center justify-center shadow-md">
+                    {cartCount}
+                  </span>
+                )}
+              </Link>
+            </div>
           </div>
         </div>
       </div>

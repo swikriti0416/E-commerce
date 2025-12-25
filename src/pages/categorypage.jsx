@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import products from "../Data/products.json"; // ← Keep your path (capital D)
+import products from "../Data/products.json"; 
 
 const CategoryPage = () => {
-  // Get unique categories from the products data
+  
   const categories = [...new Set(products.map((product) => product.category))];
 
   return (

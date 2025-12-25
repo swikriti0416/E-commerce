@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaStar, FaShoppingCart, FaHeart } from "react-icons/fa";
 import { useCartStore } from "../../store/cartStore";
 import { useWishlistStore } from "../../store/wishlistStore";
@@ -10,13 +10,25 @@ const ProductCard = ({ product }) => {
   const { toggleWishlist } = useWishlistStore();
   const wishlist = useWishlistStore((state) => state.wishlist);
   const isWishlisted = wishlist.some((item) => item.id === product.id);
+  const navigate = useNavigate();
+
+  // Check if user is logged in (simple localStorage check)
+  const isLoggedIn = !!localStorage.getItem("user");
 
   const handleAddToCart = () => {
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
     addToCart(product);
     toast.success(`${product.name} added to cart! 🛒`);
   };
 
   const handleToggleWishlist = () => {
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
     toggleWishlist(product);
     if (isWishlisted) {
       toast.info(`${product.name} removed from wishlist`);

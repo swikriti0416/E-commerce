@@ -1,19 +1,22 @@
-import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import Products from "./pages/Products.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import Cart from "./pages/Cart.jsx";
 import Wishlist from "./pages/wishlist";
-// import Banner from "./components/Banner/Banner.jsx";
 import CategoryPage from "./pages/categorypage.jsx";
-// import cartStore from "./store/cartStore.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import OrderSuccess from "./pages/OrderSuccess.jsx";
-import { ToastContainer } from 'react-toastify';
-import DarkMode from "./components/Navbar/DarkMode.jsx";
+import Login from "./components/singup.jsx/LoginForm.jsx";
+import { ToastContainer } from "react-toastify";
 
+// Protected Route Component
+const ProtectedRoute = ({ children }) => {
+  const user = localStorage.getItem("user");
+  return user ? children : <Navigate to="/login" replace />;
+};
 
 export default function App() {
   const [orderPopup, setOrderPopup] = useState(false);
@@ -26,34 +29,47 @@ export default function App() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
         <ToastContainer position="top-right" autoClose={3000} />
-        
-        {/* Navbar is OUTSIDE Routes, so it shows everywhere */}
+
         <Navbar handleOrderPopup={handleOrderPopup} />
 
         <Routes>
-          {/* HOME ROUTE: Shows Hero, Banner, and Products list */}
-          <Route 
-            path="/" 
+          <Route
+            path="/"
             element={
               <>
                 <Hero handleOrderPopup={handleOrderPopup} />
                 <Products />
-                {/* <Banner /> */}
               </>
-            } 
+            }
           />
 
-          {/* OTHER ROUTES: Hero and Banner will NOT show here */}
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/categorypage" element={<CategoryPage />} />
-          <Route path="/Checkout" element={<Checkout />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/ordersuccess" element={<OrderSuccess />} />
-         
-        </Routes>
 
+          {/* Login Page */}
+          <Route path="/login" element={<Login />} />
+
+          {/* Protected Routes */}
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute>
+                <Cart />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/wishlist"
+            element={
+              <ProtectedRoute>
+                <Wishlist />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
       </div>
     </div>
   );
