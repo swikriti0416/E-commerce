@@ -8,11 +8,11 @@ const Wishlist = () => {
 
   if (wishlist.length === 0) {
       return (
-        <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-20 px-6 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col items-center justify-center py-20 px-6 text-center">
+          <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6">
             Your Wishlist is Empty
           </h2>
-          <p className="text-lg text-gray-600 mb-10 max-w-md">
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-md">
             Looks like you haven't added any products to your wishlist yet.
           </p>
           <Link
@@ -26,7 +26,7 @@ const Wishlist = () => {
     }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
       <div className="max-w-7xl mx-auto px-6">
         <h1 className="text-5xl font-bold text-center mb-12 text-primary">
           Your Wishlist

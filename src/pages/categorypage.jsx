@@ -7,10 +7,10 @@ const CategoryPage = () => {
   const categories = [...new Set(products.map((product) => product.category))];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 py-16">
+    <div className="min-h-screen page-bg py-16">
       <div className="container mx-auto px-6">
         {/* Page Title */}
-        <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-gray-900">
+        <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-white">
           All Products by Category
         </h1>
 
@@ -23,7 +23,7 @@ const CategoryPage = () => {
             );
 
             return (
-              <section key={categoryName} className="bg-white rounded-2xl shadow-xl p-8">
+              <section key={categoryName} className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
                 {/* Category Header */}
                 <h2 className="text-3xl font-bold mb-8 text-primary border-b-4 border-primary inline-block pb-2">
                   {categoryName} ({categoryProducts.length} products)
@@ -35,7 +35,7 @@ const CategoryPage = () => {
                     <Link
                       key={product.id}
                       to={`/product/${product.id}`}
-                      className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-3"
+                      className="group bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-3"
                     >
                       {/* Product Image */}
                       <div className="h-48 sm:h-56 bg-gray-100 flex items-center justify-center overflow-hidden">
@@ -52,12 +52,12 @@ const CategoryPage = () => {
                       {/* Product Info */}
                       <div className="p-6 space-y-3">
                         {/* Product Name - Always visible, bold and clear */}
-                        <h3 className="font-bold text-xl text-gray-900 line-clamp-2 group-hover:text-primary transition-colors">
+                        <h3 className="font-bold text-xl text-gray-900 dark:text-white line-clamp-2 group-hover:text-primary transition-colors">
                           {product.name}
                         </h3>
 
                         {/* Short Description */}
-                        <p className="text-sm text-gray-600 line-clamp-2">
+                        <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                           {product.description}
                         </p>
 

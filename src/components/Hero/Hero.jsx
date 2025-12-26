@@ -28,7 +28,10 @@ const Hero = ({ handleOrderPopup }) => {
     };
 
     return (
-        <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]  bg-gradient-to-br from-orange-50 via-white to-amber-50 flex justify-center items-center duration-200">
+        <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]
+  bg-gradient-to-br from-orange-50 via-white to-amber-50
+  dark:from-gray-900 dark:via-gray-900 dark:to-gray-800
+  flex justify-center items-center duration-200">
            
             <div className="container pb-8 sm:pb-0 w-full">
                 <Slider {...settings}>
@@ -37,10 +40,10 @@ const Hero = ({ handleOrderPopup }) => {
                             <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-8 px-4">
                                 {/* Text Section */}
                                 <div className="order-2 sm:order-1 flex flex-col justify-center gap-6 text-center sm:text-left">
-                                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900">
+                                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white" >
                                         {data.title}
                                     </h1>
-                                    <p className="text-lg text-gray-600">
+                                    <p className="text-lg text-gray-600 dark:text-gray-400 ">
                                         {data.description}
                                     </p>
                                     <button

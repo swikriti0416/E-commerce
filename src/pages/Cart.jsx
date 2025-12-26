@@ -14,11 +14,11 @@ const Cart = () => {
   
   if (cart.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-6">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col items-center justify-center py-20 px-6 text-center">
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6">
           Your Cart is Empty
         </h2>
-        <p className="text-lg text-gray-600 mb-10 max-w-md">
+        <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-md">
           Looks like you haven't added any products to your cart yet.
         </p>
         <Link
@@ -32,9 +32,9 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white  to-amber-50 py-16 dark:from-gray-900">
       <div className="max-w-6xl mx-auto px-6">
-        <h1 className="text-5xl font-bold text-center mb-12 text-primary">
+        <h1 className="text-5xl font-bold text-center mb-12 text-primary ">
           Your Shopping Cart
         </h1>
 
@@ -44,7 +44,7 @@ const Cart = () => {
             {cart.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-2xl shadow-xl p-6 flex flex-col sm:flex-row gap-6 hover:shadow-2xl transition-shadow duration-300"
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col sm:flex-row gap-6 hover:shadow-2xl transition-shadow duration-300"
               >
                 {/* Product Image */}
                 <div className="sm:w-48 sm:h-48 flex-shrink-0">
@@ -60,15 +60,15 @@ const Cart = () => {
                 </div>
 
                 {/* Product Info */}
-                <div className="bg-gradient-to-br from-orange-150 to-white rounded-3xl p-8 h-fit border border-orange-100 shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <div className="bg-gradient-to-br from-orange-150 to-white rounded-3xl p-8 h-fit border border-orange-100 shadow-[0_20px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_40px_rgba(255,255,255,0.08)]">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2 dark:text-white">
                     {item.name}
                   </h3>
-                  <p className="text-lg text-gray-600 mb-6">
+                  <p className="text-lg text-white-600 mb-6 dark:text-white-400">
                     ${item.price.toFixed(2)} each
                   </p>
 
-                  <div className="flex items-center gap-4 mt-auto">
+                  <div className="flex items-center gap-4 mt-auto ">
                     <button
                       onClick={() => decreaseQuantity(item.id)}
                       disabled={item.quantity === 1}
@@ -77,7 +77,7 @@ const Cart = () => {
                       <FaMinus className="text-sm" />
                     </button>
 
-                    <span className="text-xl font-bold w-12 text-center text-gray-900">
+                    <span className="text-xl font-bold w-12 text-center text-gray-900 dark:text-white">
                       {item.quantity}
                     </span>
 
@@ -99,7 +99,7 @@ const Cart = () => {
 
                 {/* Item Total */}
                 <div className="text-right flex flex-col justify-center">
-                  <p className="text-2xl font-bold text-gray-900">
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white">
                     ${(item.price * item.quantity).toFixed(2)}
                   </p>
                 </div>
@@ -109,11 +109,11 @@ const Cart = () => {
 
           {/* Order Summary */}
           <div className="bg-gradient-to-br from-orange-150 to-white rounded-3xl p-8 h-fit border border-orange-100 shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+            <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
               Order Summary
             </h2>
 
-            <div className="space-y-6 text-lg text-gray-800">
+            <div className="space-y-6 text-lg text-gray-800 dark:text-gray-200">
               {/* Subtotal */}
               <div className="flex justify-between">
                 <span>Subtotal ({totalItems} items)</span>
@@ -128,9 +128,9 @@ const Cart = () => {
 
               {/* Total */}
               <div className="border-t-2 border-gray-300 pt-6">
-                <div className="flex justify-between text-3xl font-bold">
+                <div className="flex justify-between text-3xl font-bold dark:text-white">
                   <span>Total</span>
-                  <span className="text-gray-900">
+                  <span className="text-gray-900 dark:text-white">
                     ${getTotalPrice().toFixed(2)}
                   </span>
                 </div>
@@ -147,7 +147,7 @@ const Cart = () => {
             {/* Continue Shopping */}
             <Link
               to="/categorypage"
-              className="block text-center mt-8 text-gray-600 hover:text-gray-900 font-medium flex items-center justify-center gap-2 transition"
+              className="block text-center mt-8 text-gray-600 hover:text-gray-900 font-medium flex items-center justify-center gap-2 transition dark:text-gray-400 dark:hover:text-white"
             >
               <FaArrowLeft />
               Continue Shopping

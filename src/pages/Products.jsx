@@ -13,17 +13,17 @@ const Products = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 py-16">
+    <div className="min-h-screen page-bg py-16">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10 max-w-[600px] mx-auto">
           <p className="text-lg sm:text-4xl font-semibold text-primary">
             {query ? `Search Results for "${query}"` : "Top Selling Products for you"}
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Best Products
           </h1>
-          <p className="text-lg font-semibold text-gray-600 mt-4">
+          <p className="text-lg font-semibold text-black-600 mt-4 dark:text-white-1000">
             Discover our handpicked collection of premium tech and lifestyle products.
           </p>
         </div>

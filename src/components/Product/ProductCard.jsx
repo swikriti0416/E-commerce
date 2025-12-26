@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
+    <div className="group bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
       <Link to={`/product/${product.id}`} className="block overflow-hidden">
         <div className="h-48 sm:h-56 bg-gray-100 flex items-center justify-center">
           <img
@@ -52,12 +52,12 @@ const ProductCard = ({ product }) => {
 
       <div className="p-6 flex flex-col flex-grow space-y-3">
         <Link to={`/product/${product.id}`}>
-          <h3 className="font-bold text-gray-900 text-xl line-clamp-2 group-hover:text-primary transition-colors">
+          <h3 className="font-bold text-gray-900 dark:text-white text-xl line-clamp-2 group-hover:text-primary transition-colors">
             {product.name}
           </h3>
         </Link>
 
-        <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
+        <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed">
           {product.description}
         </p>
 
@@ -67,7 +67,7 @@ const ProductCard = ({ product }) => {
           </p>
           <div className="flex items-center gap-1">
             <FaStar className="text-yellow-400 text-sm" />
-            <span className="text-sm font-medium text-gray-600">4.5</span>
+            <span className="text-sm font-medium text-white-600 dark:text-white-400">4.5</span>
           </div>
         </div>
 

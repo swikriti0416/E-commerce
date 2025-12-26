@@ -1,12 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Light mode default */
-body {
-  @apply bg-gray-50 text-gray-900;
-}
 
-/* Dark mode */
-.dark body {
-  @apply bg-gray-900 text-gray-100;
+
+@layer utilities {
+  .page-bg {
+    @apply bg-gradient-to-br from-orange-50 via-white to-amber-50;
+  }
+
+  .dark .page-bg {
+    @apply bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800;
+  }
 }

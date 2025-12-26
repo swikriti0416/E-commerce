@@ -25,52 +25,48 @@ export default function App() {
     setOrderPopup(!orderPopup);
   };
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
-        <ToastContainer position="top-right" autoClose={3000} />
+ return (
+    <div className="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+      <ToastContainer position="top-right" autoClose={2000} />
 
-        <Navbar handleOrderPopup={handleOrderPopup} />
+      <Navbar handleOrderPopup={handleOrderPopup} />
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero handleOrderPopup={handleOrderPopup} />
-                <Products />
-              </>
-            }
-          />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero handleOrderPopup={handleOrderPopup} />
+              <Products />
+            </>
+          }
+        />
 
-          <Route path="/products" element={<Products />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/categorypage" element={<CategoryPage />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/ordersuccess" element={<OrderSuccess />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/categorypage" element={<CategoryPage />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/ordersuccess" element={<OrderSuccess />} />
 
-          {/* Login Page */}
-          <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
 
-          {/* Protected Routes */}
-          <Route
-            path="/cart"
-            element={
-              <ProtectedRoute>
-                <Cart />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/wishlist"
-            element={
-              <ProtectedRoute>
-                <Wishlist />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </div>
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/wishlist"
+          element={
+            <ProtectedRoute>
+              <Wishlist />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
     </div>
   );
 }
