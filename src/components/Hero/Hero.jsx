@@ -17,11 +17,11 @@ const Hero = ({ handleOrderPopup }) => {
         dots: false,
         arrows: true,
         infinite: true,
-        speed: 800,
+        speed: 1300,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1000,        
+        autoplaySpeed: 3000,        
         pauseOnHover: true,
         fade: true,
         accessibility: true,
@@ -30,7 +30,7 @@ const Hero = ({ handleOrderPopup }) => {
     return (
         <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]
   bg-gradient-to-br from-orange-50 via-white to-amber-50
-  dark:from-gray-900 dark:via-gray-900 dark:to-gray-800
+    dark:from-blackish-soft dark:via-blackish dark:to-blackish/95
   flex justify-center items-center duration-200">
            
             <div className="container pb-8 sm:pb-0 w-full">
