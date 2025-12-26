@@ -27,7 +27,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-orange-200 dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-300">
+    <div className="sticky top-0 z-50 w-full
+border-b border-blackish-border
+bg-blackish/95 backdrop-blur
+supports-[backdrop-filter]:bg-blackish/60">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-6">
           <Link to="/" className="flex items-center gap-3">
