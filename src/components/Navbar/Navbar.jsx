@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping, FaHeart, FaUser } from "react-icons/fa6";
 import { useCartStore } from "../../store/cartStore";
@@ -10,29 +10,24 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const navigate = useNavigate();
-
   const cartCount = useCartStore((state) => state.getTotalItems());
   const wishlistCount = useWishlistStore((state) => state.getWishlistCount());
+
+  
+  const isLoggedIn = !!localStorage.getItem("user");
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setDropdownOpen(false);
+    window.location.href = "/"; 
+  };
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
-    } else {
-      navigate("/products");
-    }
-  };
-
   return (
-    <div className=" sticky top-0 z-50 w-full
-border-b border-blackish-border
-bg-blackish/95 backdrop-blur
-supports-[backdrop-filter]:bg-blackish/60">
+    <div className="bg-orange-200 dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-300">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-6">
           <Link to="/" className="flex items-center gap-3">
@@ -40,22 +35,16 @@ supports-[backdrop-filter]:bg-blackish/60">
           </Link>
 
           <div className="flex-1 max-w-md mx-4">
-            <form onSubmit={handleSearch} className="relative group">
+            <div className="relative group">
               <input
                 type="text"
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={handleSearchChange}
-                className="w-full px-5 py-3 pl-12 pr-14 rounded-full border border-gray-900 dark:border-gray-600 focus:outline-none focus:border-primary bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300 group-hover:border-primary"
+                className="w-full px-5 py-3 pl-12 pr-10 rounded-full border border-gray-900 dark:border-gray-600 focus:outline-none focus:border-primary bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300 group-hover:border-primary"
               />
-              <button
-                type="submit"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-700 dark:text-gray-300 hover:text-primary transition"
-              >
-                <IoMdSearch className="text-xl" />
-              </button>
-              <IoMdSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-700 dark:text-gray-300 text-xl pointer-events-none" />
-            </form>
+              <IoMdSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-700 dark:text-gray-300 text-xl" />
+            </div>
           </div>
 
           <div className="flex items-center gap-6">
@@ -87,13 +76,22 @@ supports-[backdrop-filter]:bg-blackish/60">
 
                 {dropdownOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-2xl py-3 z-50 border border-gray-200 dark:border-gray-700">
-                    <Link
-                      to="/login"
-                      onClick={() => setDropdownOpen(false)}
-                      className="block px-6 py-3 text-gray-800 dark:text-gray-200 hover:bg-orange-100 dark:hover:bg-gray-700 transition"
-                    >
-                      Login
-                    </Link>
+                    {isLoggedIn ? (
+                      <button
+                        onClick={handleLogout}
+                        className="block w-full text-left px-6 py-3 text-sm hover:bg-orange-100 dark:hover:bg-gray-700 transition"
+                      >
+                        Logout
+                      </button>
+                    ) : (
+                      <Link
+                        to="/login"
+                        onClick={() => setDropdownOpen(false)}
+                        className="block px-6 py-3 text-sm hover:bg-orange-100 dark:hover:bg-gray-700 transition"
+                      >
+                        Login
+                      </Link>
+                    )}
                   </div>
                 )}
               </div>
