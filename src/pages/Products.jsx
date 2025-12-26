@@ -1,16 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import ProductCard from "../components/Product/ProductCard";
 import ProductsData from "../Data/products.json";
 
 const Products = () => {
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("search") || "";
+
+  const filteredProducts = ProductsData.filter((product) =>
+    product.name.toLowerCase().includes(query.toLowerCase()) ||
+    product.description.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 py-16">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10 max-w-[600px] mx-auto">
           <p className="text-lg sm:text-4xl font-semibold text-primary">
-            Top Selling Products for you
+            {query ? `Search Results for "${query}"` : "Top Selling Products for you"}
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
             Best Products
@@ -20,21 +28,37 @@ const Products = () => {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-          {ProductsData.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        {/* Results Count */}
+        {query && (
+          <p className="text-center text-lg text-gray-600 mb-8">
+            Found {filteredProducts.length} product{filteredProducts.length !== 1 ? "s" : ""}
+          </p>
+        )}
 
-        {/* View All */}
-        <div className="flex justify-center mt-12">
-          <Link to="/categorypage">
-            <button className="bg-primary text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-secondary transition-all hover:scale-105 shadow-lg">
-              View All Products
-            </button>
-          </Link>
-        </div>
+        {/* Product Grid */}
+        {filteredProducts.length === 0 ? (
+          <div className="text-center py-20">
+            <p className="text-2xl text-gray-600">No products found for "{query}"</p>
+            <p className="text-gray-500 mt-2">Try searching with different keywords</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        )}
+
+        {/* View All Button (only when no search) */}
+        {!query && (
+          <div className="flex justify-center mt-12">
+            <Link to="/categorypage">
+              <button className="bg-primary text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-secondary transition-all hover:scale-105 shadow-lg">
+                View All Products
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
