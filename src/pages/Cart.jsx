@@ -32,11 +32,8 @@ const Cart = () => {
   }
 
   return (
-    <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]
-  bg-gradient-to-br from-orange-50 via-white to-amber-50
-    dark:from-blackish-soft dark:via-blackish dark:to-blackish/95
-  flex justify-center items-center duration-200">
-      <div className="max-w-6xl mx-auto px-6">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 dark:from-blackish-soft dark:via-blackish dark:to-blackish/95 flex flex-col items-center justify-center py-20 px-6 text-center">
+      <div className="max-w-6xl mx-auto px-6 ">
         <h1 className="text-5xl font-bold text-center mb-12 text-primary ">
           Your Shopping Cart
         </h1>
@@ -47,7 +44,7 @@ const Cart = () => {
             {cart.map((item) => (
               <div
                 key={item.id}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col sm:flex-row gap-6 hover:shadow-2xl transition-shadow duration-300"
+                className="bg-orange-300 dark:bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col sm:flex-row gap-6 hover:shadow-2xl transition-shadow duration-300"
               >
                 {/* Product Image */}
                 <div className="sm:w-48 sm:h-48 flex-shrink-0">

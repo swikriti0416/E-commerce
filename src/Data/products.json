@@ -1,402 +1,162 @@
 [
   {
     "id": 1,
-    "name": "Premium Noise-Cancelling Headphones",
-    "price": 349,
-    "description": "Studio-grade over-ear headphones with active noise cancellation and 40-hour battery life.",
-    "image": "https://images.unsplash.com/photo-1618366712010-f4ae9c6479eb?w=800&q=80",
-    "category": "Electronics & Gadgets"
+    "name": "UltraBook Pro Laptop",
+    "price": 1299,
+    "description": "Powerful 14-inch laptop with Intel i7, 16GB RAM, and 512GB SSD. Perfect for work and entertainment.",
+    "image": "https://thumbs.dreamstime.com/b/top-view-modern-laptop-english-keyboard-retina-isolated-white-background-high-quality-35885190.jpg",
+    "category": "Laptops & Computers"
   },
   {
     "id": 2,
-    "name": "MacBook Air M2",
-    "price": 1199,
-    "description": "Ultra-thin laptop with M2 chip, 18-hour battery, and stunning Retina display.",
-    "image": "https://images.unsplash.com/photo-1541807084-5e40bca3113c?w=800&q=80",
-    "category": "Electronics & Gadgets"
+    "name": "Wireless Bluetooth Headphones",
+    "price": 249,
+    "description": "Over-ear noise-cancelling headphones with 30-hour battery life and premium sound quality.",
+    "image": "https://cdn.thewirecutter.com/wp-content/media/2023/09/noise-cancelling-headphone-2048px-0876.jpg?auto=webp&quality=75&width=1024",
+    "category": "Audio & Headphones"
   },
   {
     "id": 3,
-    "name": "Sony Alpha Mirrorless Camera",
-    "price": 1899,
-    "description": "Full-frame mirrorless camera with 4K video and fast autofocus.",
-    "image": "https://images.unsplash.com/photo-1519636249428-29ad7702d471?w=800&q=80",
-    "category": "Electronics & Gadgets"
+    "name": "Mechanical Gaming Keyboard",
+    "price": 149,
+    "description": "RGB backlit mechanical keyboard with blue switches for fast and tactile typing.",
+    "image": "https://m.media-amazon.com/images/I/71a5JKwWsYL._AC_UF894,1000_QL80_.jpg",
+    "category": "Gaming"
   },
   {
     "id": 4,
-    "name": "Apple Watch Series 9",
-    "price": 429,
-    "description": "Advanced health tracking, blood oxygen sensor, and always-on display.",
-    "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=800&q=80",
-    "category": "Electronics & Gadgets"
+    "name": "Smartwatch Fitness Tracker",
+    "price": 299,
+    "description": "Advanced smartwatch with heart rate monitor, GPS, and 14-day battery life.",
+    "image": "https://static.garmincdn.com/en_US/store/fitness/subcategory/40045-fitness-tracking-subcat-page/40045-Fitness-Tracking-Bands.jpg",
+    "category": "Wearables"
   },
   {
     "id": 5,
-    "name": "Samsung Galaxy S24 Ultra",
-    "price": 1299,
-    "description": "Flagship smartphone with S Pen, 200MP camera, and AI features.",
-    "image": "https://images.unsplash.com/photo-1610945265064-0e3d0e9a2f2f?w=800&q=80",
-    "category": "Electronics & Gadgets"
+    "name": "4K Ultra HD Monitor",
+    "price": 449,
+    "description": "27-inch 4K monitor with IPS panel, ideal for designers and gamers.",
+    "image": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/bc047d53-964e-4910-b73e-ad6097e6e017/md05231065-DZ01-v1-jpg?io=transform:fill,width:1536",
+    "category": "Laptops & Computers"
   },
   {
     "id": 6,
-    "name": "Logitech MX Master 3S Mouse",
-    "price": 99,
-    "description": "Ergonomic wireless mouse with ultra-fast scrolling and multi-device support.",
-    "image": "https://images.pexels.com/photos/394531/pexels-photo-394531.jpeg?w=800&q=80",
-    "category": "Electronics & Gadgets"
+    "name": "Wireless Gaming Mouse",
+    "price": 89,
+    "description": "Ergonomic wireless mouse with 16,000 DPI sensor and customizable RGB lighting.",
+    "image": "https://us.maxgaming.com/bilder/artiklar/zoom/22269_1.jpg?m=1661864590",
+    "category": "Gaming"
   },
   {
     "id": 7,
-    "name": "Bose QuietComfort Earbuds II",
-    "price": 279,
-    "description": "True wireless earbuds with world-class noise cancellation.",
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    "category": "Electronics & Gadgets"
+    "name": "Portable Bluetooth Speaker",
+    "price": 129,
+    "description": "Waterproof speaker with 360° sound and 20-hour playtime.",
+    "image": "https://m.media-amazon.com/images/I/61w4FceEmjL._AC_UF894,1000_QL80_.jpg",
+    "category": "Audio & Headphones"
   },
   {
     "id": 8,
-    "name": "Dell UltraSharp 4K Webcam",
-    "price": 199,
-    "description": "Professional 4K webcam with AI auto-framing and Windows Hello support.",
-    "image": "https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?w=800&q=80",
-    "category": "Electronics & Gadgets"
+    "name": "Tablet 10-inch",
+    "price": 399,
+    "description": "Lightweight tablet with 128GB storage, perfect for streaming and reading.",
+    "image": "https://m.media-amazon.com/images/I/71PYodDpS+L._AC_UF894,1000_QL80_.jpg",
+    "category": "Mobile & Tablets"
   },
   {
     "id": 9,
-    "name": "Nintendo Switch OLED",
-    "price": 349,
-    "description": "Handheld gaming console with vibrant OLED screen and improved audio.",
-    "image": "https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=800&q=80",
-    "category": "Electronics & Gadgets"
+    "name": "Noise-Cancelling Earbuds",
+    "price": 199,
+    "description": "True wireless earbuds with active noise cancellation and touch controls.",
+    "image": "https://m.media-amazon.com/images/I/51RBbmKf9WL._SY350_PKmb-play-button-overlay_.jpg",
+    "category": "Audio & Headphones"
   },
   {
     "id": 10,
-    "name": "Kindle Paperwhite",
-    "price": 149,
-    "description": "Waterproof e-reader with adjustable warm light and weeks of battery life.",
-    "image": "https://images.unsplash.com/photo-1607004468139-f0b5c4cd4be5?w=800&q=80",
-    "category": "Electronics & Gadgets"
+    "name": "External SSD 1TB",
+    "price": 119,
+    "description": "Fast portable SSD with USB-C, up to 1050MB/s read speed.",
+    "image": "https://m.media-amazon.com/images/I/614nzvYB1HL._AC_UF894,1000_QL80_.jpg",
+    "category": "Laptops & Computers"
   },
   {
     "id": 11,
-    "name": "Nike Air Max Sneakers",
-    "price": 159,
-    "description": "Iconic running shoes with maximum cushioning and bold style.",
-    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
-    "category": "Fashion & Apparel"
+    "name": "Backpack Laptop Bag",
+    "price": 79,
+    "description": "Water-resistant backpack with padded laptop compartment up to 15.6 inches.",
+    "image": "https://m.media-amazon.com/images/I/51bOX11ztgL._AC_UY900_.jpg",
+    "category": "Accessories"
   },
   {
     "id": 12,
-    "name": "Leather Crossbody Bag",
-    "price": 89,
-    "description": "Genuine leather bag with adjustable strap and multiple compartments.",
-    "image": "https://images.unsplash.com/photo-1553062407-98eeb70c8a64?w=800&q=80",
-    "category": "Fashion & Apparel"
+    "name": "Polarized Sunglasses",
+    "price": 59,
+    "description": "UV400 protection sunglasses with stylish aviator frame.",
+    "image": "https://m.media-amazon.com/images/I/51WplwEOwIL._AC_UY1000_.jpg",
+    "category": "Accessories"
   },
   {
     "id": 13,
-    "name": "Ray-Ban Aviator Sunglasses",
-    "price": 179,
-    "description": "Classic polarized aviators with UV protection.",
-    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&q=80",
-    "category": "Fashion & Apparel"
+    "name": "Running Shoes",
+    "price": 119,
+    "description": "Lightweight cushioned running shoes with breathable mesh upper.",
+    "image": "https://m.media-amazon.com/images/I/71fAogOUf6L._AC_UY900_.jpg",
+    "category": "Home & Fitness"
   },
   {
     "id": 14,
-    "name": "Cashmere Scarf",
-    "price": 129,
-    "description": "Luxurious 100% cashmere scarf in neutral tones.",
-    "image": "https://images.pexels.com/photos/1456709/pexels-photo-1456709.jpeg?w=800&q=80",
-    "category": "Fashion & Apparel"
+    "name": "Coffee Maker Machine",
+    "price": 89,
+    "description": "Programmable drip coffee maker with 12-cup capacity and auto shut-off.",
+    "image": "https://m.media-amazon.com/images/I/71WtF7QxDzL._AC_UF894,1000_QL80_.jpg",
+    "category": "Home & Fitness"
   },
   {
     "id": 15,
-    "name": "Minimalist Watch",
-    "price": 199,
-    "description": "Stainless steel watch with leather strap and clean dial.",
-    "image": "https://images.unsplash.com/photo-1524592094963-75e7c2c68e8d?w=800&q=80",
-    "category": "Fashion & Apparel"
+    "name": "High-Speed Blender",
+    "price": 149,
+    "description": "1000W blender with multiple speeds, great for smoothies and soups.",
+    "image": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/bb1c75f8-13ab-4b64-ae3e-31a846d3dee8.__CR0,0,600,450_PT0_SX600_V1___.jpg",
+    "category": "Home & Fitness"
   },
   {
     "id": 16,
-    "name": "Vitamin C Face Serum",
-    "price": 59,
-    "description": "Potent brightening serum with 20% vitamin C and hyaluronic acid.",
-    "image": "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?w=800&q=80",
-    "category": "Beauty & Personal Care"
+    "name": "Mini Drone with Camera",
+    "price": 279,
+    "description": "4K camera drone with GPS and 30-minute flight time.",
+    "image": "https://store.potensic.com/cdn/shop/files/ATOM_drones.jpg?v=1717056140&width=1000",
+    "category": "Mobile & Tablets"
   },
   {
     "id": 17,
-    "name": "Electric Facial Cleansing Brush",
-    "price": 99,
-    "description": "Sonic cleansing device with multiple speed settings.",
-    "image": "https://images.unsplash.com/photo-1631214439723-6a2e5d5d9c0d?w=800&q=80",
-    "category": "Beauty & Personal Care"
+    "name": "Electric Toothbrush",
+    "price": 69,
+    "description": "Rechargeable toothbrush with 5 modes and 2-minute timer.",
+    "image": "https://m.media-amazon.com/images/I/41+Sa3yJcLL._AC_UF1000,1000_QL80_.jpg",
+    "category": "Accessories"
   },
   {
     "id": 18,
-    "name": "Perfume Gift Set",
-    "price": 149,
-    "description": "Luxury eau de parfum collection with 4 signature scents.",
-    "image": "https://images.unsplash.com/photo-1541643602797-8c464c9e1a9e?w=800&q=80",
-    "category": "Beauty & Personal Care"
+    "name": "Yoga Mat Premium",
+    "price": 39,
+    "description": "Non-slip extra thick exercise mat (6mm) for yoga and fitness.",
+    "image": "https://i5.walmartimages.com/seo/Gaiam-Yoga-Mat-Premium-6mm-Print-Reversible-Extra-Thick-Non-Slip-Exercise-Fitness-Mat-Types-Yoga-Pilates-Floor-Workouts-68-x-24-x-6mm-Thick_88c5664d-f3a3-466b-9d8b-57cf336a863e.557431f07d4196198af93ab813405e03.jpeg",
+    "category": "Home & Fitness"
   },
   {
     "id": 19,
-    "name": "Hair Straightener Pro",
-    "price": 129,
-    "description": "Ceramic plate straightener with temperature control up to 450°F.",
-    "image": "https://images.pexels.com/photos/6697352/pexels-photo-6697352.jpeg?w=800&q=80",
-    "category": "Beauty & Personal Care"
+    "name": "Smart Home Security Camera",
+    "price": 99,
+    "description": "1080p indoor camera with night vision and two-way audio.",
+    "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6506/6506646_sd.jpg;maxHeight=828;maxWidth=400?format=webp",
+    "category": "Smart Home & Cameras"
   },
   {
     "id": 20,
-    "name": "Men's Grooming Kit",
-    "price": 79,
-    "description": "Complete beard and hair grooming set with trimmer and accessories.",
-    "image": "https://images.unsplash.com/photo-1621607512214-6829748013e4?w=800&q=80",
-    "category": "Beauty & Personal Care"
-  },
-  {
-    "id": 21,
-    "name": "Cast Iron Dutch Oven",
-    "price": 119,
-    "description": "Enameled 6-quart Dutch oven perfect for slow cooking.",
-    "image": "https://images.pexels.com/photos/2067399/pexels-photo-2067399.jpeg?w=800&q=80",
-    "category": "Home & Kitchen"
-  },
-  {
-    "id": 22,
-    "name": "Espresso Machine",
-    "price": 399,
-    "description": "Semi-automatic espresso machine with milk frother.",
-    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd1f5f?w=800&q=80",
-    "category": "Home & Kitchen"
-  },
-  {
-    "id": 23,
-    "name": "Smart Air Purifier",
-    "price": 249,
-    "description": "HEPA filter air purifier with app control and voice assistant support.",
-    "image": "https://images.pexels.com/photos/5857517/pexels-photo-5857517.jpeg?w=800&q=80",
-    "category": "Home & Kitchen"
-  },
-  {
-    "id": 24,
-    "name": "Stand Mixer",
-    "price": 329,
-    "description": "6-quart stand mixer with 10 speeds and multiple attachments.",
-    "image": "https://images.pexels.com/photos/434295/pexels-photo-434295.jpeg?w=800&q=80",
-    "category": "Home & Kitchen"
-  },
-  {
-    "id": 25,
-    "name": "Robot Vacuum with Mop",
-    "price": 499,
-    "description": "2-in-1 robot vacuum and mop with laser navigation.",
-    "image": "https://images.unsplash.com/photo-1558317374-8d5c3a1c4e3b?w=800&q=80",
-    "category": "Home & Kitchen"
-  },
-  {
-    "id": 26,
-    "name": "Resistance Bands Set",
-    "price": 39,
-    "description": "5-level resistance bands with handles and door anchor.",
-    "image": "https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?w=800&q=80",
-    "category": "Sports & Fitness"
-  },
-  {
-    "id": 27,
-    "name": "Adjustable Weight Bench",
-    "price": 179,
-    "description": "Foldable weight bench with 7 backrest positions.",
-    "image": "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?w=800&q=80",
-    "category": "Sports & Fitness"
-  },
-  {
-    "id": 28,
-    "name": "Cycling Jersey",
-    "price": 69,
-    "description": "Breathable moisture-wicking cycling jersey with rear pockets.",
-    "image": "https://images.pexels.com/photos/1000740/pexels-photo-1000740.jpeg?w=800&q=80",
-    "category": "Sports & Fitness"
-  },
-  {
-    "id": 29,
-    "name": "Foam Roller",
-    "price": 29,
-    "description": "High-density foam roller for muscle recovery and massage.",
-    "image": "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=800&q=80",
-    "category": "Sports & Fitness"
-  },
-  {
-    "id": 30,
-    "name": "Jump Rope Adjustable",
-    "price": 19,
-    "description": "Speed jump rope with ball bearings and adjustable length.",
-    "image": "https://images.pexels.com/photos/3837748/pexels-photo-3837748.jpeg?w=800&q=80",
-    "category": "Sports & Fitness"
-  },
-  {
-    "id": 31,
-    "name": "Hardcover Fiction Bestseller",
-    "price": 29,
-    "description": "Latest mystery thriller from award-winning author.",
-    "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
-    "category": "Books & Media"
-  },
-  {
-    "id": 32,
-    "name": "Bluetooth Turntable",
-    "price": 219,
-    "description": "Modern turntable with Bluetooth streaming and built-in speakers.",
-    "image": "https://images.pexels.com/photos/1619659/pexels-photo-1619659.jpeg?w=800&q=80",
-    "category": "Books & Media"
-  },
-  {
-    "id": 33,
-    "name": "Podcast Microphone Kit",
-    "price": 149,
-    "description": "USB condenser microphone with stand and pop filter.",
-    "image": "https://images.pexels.com/photos/164852/pexels-photo-164852.jpeg?w=800&q=80",
-    "category": "Books & Media"
-  },
-  {
-    "id": 34,
-    "name": "Streaming Webcam 1080p",
-    "price": 89,
-    "description": "Full HD webcam with ring light and privacy cover.",
-    "image": "https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?w=800&q=80",
-    "category": "Books & Media"
-  },
-  {
-    "id": 35,
-    "name": "Digital Photo Frame",
-    "price": 129,
-    "description": "10-inch WiFi digital frame with cloud storage.",
-    "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80",
-    "category": "Books & Media"
-  },
-  {
-    "id": 36,
-    "name": "LEGO Architecture Set",
-    "price": 99,
-    "description": "Detailed building set of famous landmark.",
-    "image": "https://images.unsplash.com/photo-1587653915936-562e5776f5e6?w=800&q=80",
-    "category": "Toys & Games"
-  },
-  {
-    "id": 37,
-    "name": "Drone with 4K Camera",
-    "price": 399,
-    "description": "Foldable drone with GPS and 30-minute flight time.",
-    "image": "https://images.pexels.com/photos/3951944/pexels-photo-3951944.jpeg?w=800&q=80",
-    "category": "Toys & Games"
-  },
-  {
-    "id": 38,
-    "name": "Strategy Board Game",
-    "price": 59,
-    "description": "Award-winning board game for 2-5 players.",
-    "image": "https://images.pexels.com/photos/278918/pexels-photo-278918.jpeg?w=800&q=80",
-    "category": "Toys & Games"
-  },
-  {
-    "id": 39,
-    "name": "Puzzle 2000 Pieces",
-    "price": 39,
-    "description": "Challenging nature scene jigsaw puzzle.",
-    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
-    "category": "Toys & Games"
-  },
-  {
-    "id": 40,
-    "name": "Remote Control Boat",
-    "price": 79,
-    "description": "High-speed RC boat with waterproof design.",
-    "image": "https://images.pexels.com/photos/4480549/pexels-photo-4480549.jpeg?w=800&q=80",
-    "category": "Toys & Games"
-  },
-  {
-    "id": 41,
-    "name": "Car Battery Jump Starter",
-    "price": 99,
-    "description": "Portable 2000A jump starter with power bank function.",
-    "image": "https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?w=800&q=80",
-    "category": "Automotive"
-  },
-  {
-    "id": 42,
-    "name": "Universal Car Mount",
-    "price": 29,
-    "description": "Magnetic phone holder for car vent.",
-    "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=800&q=80",
-    "category": "Automotive"
-  },
-  {
-    "id": 43,
-    "name": "Tire Pressure Gauge Digital",
-    "price": 19,
-    "description": "Accurate digital gauge with backlit display.",
-    "image": "https://images.pexels.com/photos/3831645/pexels-photo-3831645.jpeg?w=800&q=80",
-    "category": "Automotive"
-  },
-  {
-    "id": 44,
-    "name": "Car Interior Cleaner Kit",
-    "price": 39,
-    "description": "Complete detailing kit with brushes and cleaners.",
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    "category": "Automotive"
-  },
-  {
-    "id": 45,
-    "name": "Windshield Sun Shade",
-    "price": 25,
-    "description": "Custom-fit reflective sun shade for UV protection.",
-    "image": "https://images.pexels.com/photos/4480549/pexels-photo-4480549.jpeg?w=800&q=80",
-    "category": "Automotive"
-  },
-  {
-    "id": 46,
-    "name": "Wireless CarPlay Adapter",
-    "price": 129,
-    "description": "Convert wired CarPlay to wireless.",
-    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80",
-    "category": "Electronics & Gadgets"
-  },
-  {
-    "id": 47,
-    "name": "Portable Projector",
-    "price": 299,
-    "description": "Mini 1080p projector with built-in battery.",
-    "image": "https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?w=800&q=80",
-    "category": "Electronics & Gadgets"
-  },
-  {
-    "id": 48,
-    "name": "Smart LED Light Strip",
-    "price": 59,
-    "description": "16-foot RGB strip with app and voice control.",
-    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&q=80",
-    "category": "Home & Kitchen"
-  },
-  {
-    "id": 49,
-    "name": "Ergonomic Office Chair",
-    "price": 399,
-    "description": "Adjustable lumbar support and breathable mesh back.",
-    "image": "https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg?w=800&q=80",
-    "category": "Home & Kitchen"
-  },
-  {
-    "id": 50,
-    "name": "PlayStation 5 Console",
-    "price": 499,
-    "description": "Next-gen gaming console with ultra-fast SSD and ray tracing.",
-    "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=800&q=80",
-    "category": "Electronics & Gadgets"
+    "name": "Wireless Charger Stand",
+    "price": 49,
+    "description": "Fast wireless charging stand compatible with iPhone and Android devices.",
+    "image": "https://m.media-amazon.com/images/I/61uWSROzjNL._AC_UF1000,1000_QL80_.jpg",
+    "category": "Accessories"
   }
 ]

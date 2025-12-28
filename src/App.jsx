@@ -7,8 +7,8 @@ import Login from "./components/auth/LoginForm.jsx";
 import Products from "./pages/Products.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import Cart from "./pages/Cart.jsx";
-import Wishlist from "./pages/Wishlist.jsx";
-import CategoryPage from "./pages/CategoryPage.jsx";
+import Wishlist from "./pages/wishlist.jsx";
+import CategoryPage from "./pages/categorypage.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import OrderSuccess from "./pages/OrderSuccess.jsx";
 import HomePage from "./pages/HomePage.jsx"

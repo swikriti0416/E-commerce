@@ -1,0 +1,44 @@
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (email) {
+      localStorage.setItem("user", JSON.stringify({ email }));
+      navigate("/");
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 flex flex-col justify-center items-center min-h-screen  bg-gradient-to-br from-orange-50 via-white to-amber-50 dark:from-blackish-soft dark:via-blackish dark:to-blackish/95 px-4">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 w-full max-w-md">
+        <h2 className="text-3xl dark:text-white font-bold text-center mb-8">Login</h2>
+        <form onSubmit={handleLogin} className="space-y-6">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full px-5 py-3 rounded-lg border border-gray-300 focus:border-primary outline-none"
+          />
+          <button
+            type="submit"
+            className="w-full bg-primary text-white py-4 rounded-lg font-bold hover:bg-secondary transition"
+          >
+            Login
+          </button>
+        </form>
+        <p className="text-center mt-4 text-gray-600 dark:text-white">
+          Just type any email and click Login , i will add password section later😒
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Login;
