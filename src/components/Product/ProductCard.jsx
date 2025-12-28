@@ -12,7 +12,6 @@ const ProductCard = ({ product }) => {
   const isWishlisted = wishlist.some((item) => item.id === product.id);
   const navigate = useNavigate();
 
-  // Check if user is logged in (simple localStorage check)
   const isLoggedIn = !!localStorage.getItem("user");
 
   const handleAddToCart = () => {
@@ -38,7 +37,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="group bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
+    <div className="group bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
       <Link to={`/product/${product.id}`} className="block overflow-hidden">
         <div className="h-48 sm:h-56 bg-gray-100 flex items-center justify-center">
           <img
@@ -50,28 +49,33 @@ const ProductCard = ({ product }) => {
         </div>
       </Link>
 
-      <div className="p-6 flex flex-col flex-grow space-y-3">
-        <Link to={`/product/${product.id}`}>
-          <h3 className="font-bold text-gray-900 dark:text-white text-xl line-clamp-2 group-hover:text-primary transition-colors">
-            {product.name}
-          </h3>
-        </Link>
+      
+      <div className="p-6 flex flex-col justify-between flex-grow">
+        <div>
+          <Link to={`/product/${product.id}`}>
+            <h3 className="font-bold text-gray-900 dark:text-white text-xl line-clamp-2 group-hover:text-primary transition-colors">
+              {product.name}
+            </h3>
+          </Link>
 
-        <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed">
-          {product.description}
-        </p>
-
-        <div className="flex items-center justify-between mt-auto">
-          <p className="text-2xl font-bold text-primary">
-            ${product.price}
+          <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed mt-2">
+            {product.description}
           </p>
-          <div className="flex items-center gap-1">
-            <FaStar className="text-yellow-400 text-sm" />
-            <span className="text-sm font-medium text-white-600 dark:text-white-400">4.5</span>
+
+          {/* Price + Rating */}
+          <div className="flex items-center justify-between mt-4">
+            <p className="text-2xl font-bold text-primary">
+              ${product.price}
+            </p>
+            <div className="flex items-center gap-1">
+              <FaStar className="text-yellow-400 text-sm" />
+              <span className="text-sm font-medium text-gray-600 dark:text-gray-400">4.5</span>
+            </div>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 mt-4">
+        {/* Buttons - Always at bottom */}
+        <div className="flex items-center gap-3 mt-6">
           <button
             onClick={handleAddToCart}
             className="flex-1 bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all shadow-md font-semibold"
@@ -82,11 +86,11 @@ const ProductCard = ({ product }) => {
 
           <button
             onClick={handleToggleWishlist}
-            className="p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition"
+            className="p-3 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition"
           >
             <FaHeart
               className={`text-xl transition-colors ${
-                isWishlisted ? "text-red-500" : "text-gray-600"
+                isWishlisted ? "text-red-500" : "text-gray-600 dark:text-gray-400"
               }`}
             />
           </button>
