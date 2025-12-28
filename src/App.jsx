@@ -5,12 +5,13 @@ import Hero from "./components/Hero/Hero.jsx";
 import Products from "./pages/Products.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import Cart from "./pages/Cart.jsx";
-import Wishlist from "./pages/wishlist";
-import CategoryPage from "./pages/categorypage.jsx";
+import Wishlist from "./pages/Wishlist.jsx";
+import CategoryPage from "./pages/CategoryPage.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import OrderSuccess from "./pages/OrderSuccess.jsx";
 import Login from "./components/singup.jsx/LoginForm.jsx";
 import { ToastContainer } from "react-toastify";
+import HomePage from "./pages/HomePage.jsx"
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -33,7 +34,7 @@ export default function App() {
 
       <Routes>
         <Route
-          path="/"
+          path="/home"
           element={
             <>
               <Hero handleOrderPopup={handleOrderPopup} />
@@ -41,7 +42,7 @@ export default function App() {
             </>
           }
         />
-
+        <Route path="/" element={<HomePage/>}/>
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/categorypage" element={<CategoryPage />} />

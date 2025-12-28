@@ -14,7 +14,7 @@ const Products = () => {
 
   return (
     <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]
-  bg-gradient-to-br from-orange-50 via-white to-amber-50
+  bg-gradient-to-br from-orange-500 via-white to-amber-50
     dark:from-blackish-soft dark:via-blackish dark:to-blackish/95
   flex justify-center items-center duration-200">
       <div className="container mx-auto px-4">
