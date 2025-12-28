@@ -33,19 +33,19 @@ const Products = () => {
 
         {/* Results Count */}
         {query && (
-          <p className="text-center text-lg text-gray-600 mb-8">
+          <p className="text-center text-lg text-gray-600 mb-8 dark:text-white">
             Found {filteredProducts.length} product{filteredProducts.length !== 1 ? "s" : ""}
           </p>
         )}
 
         {/* Product Grid */}
         {filteredProducts.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-2xl text-gray-600">No products found for "{query}"</p>
-            <p className="text-gray-500 mt-2">Try searching with different keywords</p>
+          <div className="text-center py-20 dark:text-white">
+            <p className="text-2xl text-gray-600 dark:text-white">No products found for "{query}"</p>
+            <p className="text-gray-500 mt-2 dark:text-white">Try searching with different keywords</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 dark:text-white">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
