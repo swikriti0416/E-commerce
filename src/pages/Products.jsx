@@ -7,10 +7,14 @@ const Products = () => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("search") || "";
 
-  const filteredProducts = ProductsData.filter((product) =>
+  let filteredProducts = ProductsData.filter((product) =>
     product.name.toLowerCase().includes(query.toLowerCase()) ||
     product.description.toLowerCase().includes(query.toLowerCase())
   );
+
+  if (!query) {
+    filteredProducts = filteredProducts.slice(0, 15);
+  }
 
   return (
     <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]
@@ -33,7 +37,7 @@ const Products = () => {
 
         {/* Results Count */}
         {query && (
-          <p className="text-center text-lg text-gray-600 mb-8 dark:text-white">
+          <p className="text-center text-lg text-gray-600 mb-8 dark:text-white ">
             Found {filteredProducts.length} product{filteredProducts.length !== 1 ? "s" : ""}
           </p>
         )}

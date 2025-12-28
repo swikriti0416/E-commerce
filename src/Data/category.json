@@ -1,66 +1,66 @@
 [
   {
     "id": 1,
-    "name": "Laptops & Computers",
-    "slug": "laptops-computers",
+    "name": "Electronics & Gadgets",
+    "slug": "electronics-gadgets",
     "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "productCount": 5,
-    "description": "High-performance laptops, monitors, and computer accessories"
+    "productCount": 15,
+    "description": "Laptops, monitors, headphones, speakers, smartphones, and cutting-edge tech"
   },
   {
     "id": 2,
-    "name": "Audio & Headphones",
-    "slug": "audio-headphones",
-    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "productCount": 4,
-    "description": "Premium headphones, speakers, and audio devices"
+    "name": "Fashion & Apparel",
+    "slug": "fashion-apparel",
+    "image": "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "productCount": 5,
+    "description": "Sneakers, dresses, jackets, wallets, and stylish accessories"
   },
   {
     "id": 3,
-    "name": "Mobile & Tablets",
-    "slug": "mobile-tablets",
-    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "productCount": 3,
-    "description": "Latest smartphones, tablets, and mobile accessories"
+    "name": "Beauty & Personal Care",
+    "slug": "beauty-care",
+    "image": "https://images.unsplash.com/photo-1596462502278-3a0b21163a49?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "productCount": 5,
+    "description": "Skincare, hair tools, fragrances, and grooming essentials"
   },
   {
     "id": 4,
-    "name": "Gaming",
-    "slug": "gaming",
-    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "productCount": 3,
-    "description": "Gaming keyboards, mice, and accessories for gamers"
+    "name": "Home & Kitchen",
+    "slug": "home-kitchen",
+    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "productCount": 7,
+    "description": "Cookware, coffee makers, blenders, vacuums, and smart home devices"
   },
   {
     "id": 5,
-    "name": "Smart Home & Cameras",
-    "slug": "smart-home",
-    "image": "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "productCount": 2,
-    "description": "Security cameras, smart devices, and home automation"
+    "name": "Sports & Fitness",
+    "slug": "sports-fitness",
+    "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "productCount": 5,
+    "description": "Yoga mats, running shoes, dumbbells, trackers, and fitness gear"
   },
   {
     "id": 6,
-    "name": "Wearables",
-    "slug": "wearables",
-    "image": "https://images.unsplash.com/photo-1575311373937-7b1b3c4b4d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "productCount": 2,
-    "description": "Smartwatches and fitness trackers"
+    "name": "Books & Media",
+    "slug": "books-media",
+    "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "productCount": 5,
+    "description": "E-readers, cameras, vinyl players, novels, and entertainment"
   },
   {
     "id": 7,
-    "name": "Accessories",
-    "slug": "accessories",
-    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "productCount": 4,
-    "description": "Chargers, cases, bags, and essential add-ons"
+    "name": "Toys & Games",
+    "slug": "toys-games",
+    "image": "https://images.unsplash.com/photo-1587653915936-562e5776f5e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "productCount": 5,
+    "description": "Building blocks, RC cars, puzzles, board games, and STEM kits"
   },
   {
     "id": 8,
-    "name": "Home & Fitness",
-    "slug": "home-fitness",
-    "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "productCount": 3,
-    "description": "Yoga mats, blenders, and wellness products"
+    "name": "Automotive",
+    "slug": "automotive",
+    "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "productCount": 5,
+    "description": "Dash cams, phone mounts, jump starters, vacuums, and car accessories"
   }
 ]

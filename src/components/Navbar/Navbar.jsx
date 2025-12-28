@@ -35,7 +35,7 @@ const Navbar = () => {
     } else {
       navigate("/products");
     }
-    setSearchQuery(""); // Optional: clear input after search
+    setSearchQuery(""); 
   };
 
   return (
