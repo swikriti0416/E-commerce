@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
+import Products from './Products';
 
-function Home() {
+function HomePage() {
   // ... your existing hero and trending code ...
 
   const categories = [
@@ -13,7 +14,7 @@ function Home() {
   ];
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-700 min-h-screen">
       {/* Your hero and trending sections */}
 
       {/* Shop by Category - Exact Box Style */}
@@ -95,8 +96,9 @@ function Home() {
           ))}
         </div>
       </div>
+      {/* <Products/> */}
     </div>
   );
 }
 
-export default Home;
+export default HomePage;

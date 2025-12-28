@@ -18,13 +18,13 @@ const Products = () => {
 
   return (
     <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]
-  bg-gradient-to-br from-orange-50 via-white to-amber-50
+  bg-gradient-to-br from-orange-200 via-white to-indigo-400
     dark:from-blackish-soft dark:via-blackish dark:to-blackish/95
   flex justify-center items-center duration-200">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10 max-w-[600px] mx-auto">
-          <p className="text-lg sm:text-4xl font-semibold text-primary">
+          <p className="text-lg sm:text-4xl font-semibold text-primary mt-10">
             {query ? `Search Results for "${query}"` : "Top Selling Products for you"}
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
