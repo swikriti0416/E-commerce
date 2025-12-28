@@ -44,7 +44,7 @@ const Cart = () => {
             {cart.map((item) => (
               <div
                 key={item.id}
-                className="bg-orange-300 dark:bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col sm:flex-row gap-6 hover:shadow-2xl transition-shadow duration-300"
+                className=" bg-orange-100 border-2 border-orange-200 dark:bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col sm:flex-row gap-6 hover:shadow-2xl transition-shadow duration-300"
               >
                 {/* Product Image */}
                 <div className="sm:w-48 sm:h-48 flex-shrink-0">
