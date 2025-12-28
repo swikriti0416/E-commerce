@@ -11,8 +11,8 @@ export default function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Product Not Found</h2>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-gray-900">
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">Product Not Found</h2>
         <Link to="/" className="text-primary hover:underline text-lg">
           ← Return to Shop
         </Link>
@@ -21,7 +21,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Image Section */}
@@ -41,7 +41,7 @@ export default function ProductDetail() {
 
           {/* Details Section */}
           <div className="flex flex-col justify-center space-y-8">
-            <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
+            <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">
               {product.name}
             </h1>
 
@@ -57,7 +57,7 @@ export default function ProductDetail() {
 
             <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
 
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
               {product.description}
             </p>
 
@@ -73,7 +73,7 @@ export default function ProductDetail() {
             {/* Back Link */}
             <Link
               to="/"
-              className="flex items-center gap-3 text-gray-600 hover:text-gray-900 font-medium text-lg transition"
+              className="flex items-center gap-3 text-gray-600 hover:text-gray-900 font-medium text-lg transition dark:text-gray-300 dark:hover:text-white"
             >
               <FaArrowLeft />
               Back to Products

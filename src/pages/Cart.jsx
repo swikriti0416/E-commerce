@@ -32,7 +32,10 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white  to-amber-50 py-16 dark:from-gray-900">
+    <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]
+  bg-gradient-to-br from-orange-50 via-white to-amber-50
+    dark:from-blackish-soft dark:via-blackish dark:to-blackish/95
+  flex justify-center items-center duration-200">
       <div className="max-w-6xl mx-auto px-6">
         <h1 className="text-5xl font-bold text-center mb-12 text-primary ">
           Your Shopping Cart

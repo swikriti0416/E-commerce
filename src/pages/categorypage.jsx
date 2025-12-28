@@ -7,7 +7,10 @@ const CategoryPage = () => {
   const categories = [...new Set(products.map((product) => product.category))];
 
   return (
-    <div className="min-h-screen page-bg py-16">
+    <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]
+  bg-gradient-to-br from-orange-50 via-white to-amber-50
+    dark:from-blackish-soft dark:via-blackish dark:to-blackish/95
+  flex justify-center items-center duration-200">
       <div className="container mx-auto px-6">
         {/* Page Title */}
         <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-white">

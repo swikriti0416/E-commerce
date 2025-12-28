@@ -26,7 +26,10 @@ const Wishlist = () => {
     }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+    <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]
+  bg-gradient-to-br from-orange-50 via-white to-amber-50
+    dark:from-blackish-soft dark:via-blackish dark:to-blackish/95
+  flex justify-center items-center duration-200">
       <div className="max-w-7xl mx-auto px-6">
         <h1 className="text-5xl font-bold text-center mb-12 text-primary">
           Your Wishlist
