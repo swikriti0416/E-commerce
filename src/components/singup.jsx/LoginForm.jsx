@@ -14,7 +14,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen  bg-gradient-to-br from-orange-50 via-white to-amber-50 dark:from-blackish-soft dark:via-blackish dark:to-blackish/95 px-4">
+    <div className="fixed inset-0 flex flex-col justify-center items-center min-h-screen  bg-gradient-to-br from-orange-50 via-white to-amber-50 dark:from-blackish-soft dark:via-blackish dark:to-blackish/95 px-4">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 w-full max-w-md">
         <h2 className="text-3xl dark:text-white font-bold text-center mb-8">Login</h2>
         <form onSubmit={handleLogin} className="space-y-6">

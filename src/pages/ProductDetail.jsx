@@ -21,7 +21,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 py-12">
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900  px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Image Section */}
