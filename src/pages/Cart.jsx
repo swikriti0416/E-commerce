@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useMemo } from "react"; // ← Added useMemo
 import { Link } from "react-router-dom";
 import { FaPlus, FaMinus, FaTrash, FaArrowLeft } from "react-icons/fa";
 import { useCartStore } from "../store/cartStore";
-import Checkout from "./Checkout";
 
 const Cart = () => {
   const { cart, addToCart, decreaseQuantity, removeFromCart, getTotalPrice } =
     useCartStore();
 
-  
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  // Memoized (memo ko use ho hai)
+  const totalPrice = useMemo(() => {
+    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  }, [cart]);
 
   
+  const totalItems = useMemo(() => {
+    return cart.reduce((sum, item) => sum + item.quantity, 0);
+  }, [cart]);
+
   if (cart.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col items-center justify-center py-20 px-6 text-center">
@@ -32,9 +37,9 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 dark:from-blackish-soft dark:via-blackish dark:to-blackish/95 flex flex-col items-center justify-center py-20 px-6 text-center">
-      <div className="max-w-6xl mx-auto px-6 ">
-        <h1 className="text-5xl font-bold text-center mb-12 text-primary ">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 dark:from-blackish-soft dark:via-blackish dark:to-blackish/95 py-20">
+      <div className="max-w-6xl mx-auto px-6">
+        <h1 className="text-5xl font-bold text-center mb-12 text-primary">
           Your Shopping Cart
         </h1>
 
@@ -44,7 +49,7 @@ const Cart = () => {
             {cart.map((item) => (
               <div
                 key={item.id}
-                className=" bg-orange-100 border-2 border-orange-200 dark:bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col sm:flex-row gap-6 hover:shadow-2xl transition-shadow duration-300"
+                className="bg-orange-100 border-2 border-orange-200 dark:bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col sm:flex-row gap-6 hover:shadow-2xl transition-shadow duration-300"
               >
                 {/* Product Image */}
                 <div className="sm:w-48 sm:h-48 flex-shrink-0">
@@ -60,15 +65,17 @@ const Cart = () => {
                 </div>
 
                 {/* Product Info */}
-                <div className="bg-gradient-to-br from-orange-150 to-white rounded-3xl p-8 h-fit border border-orange-100 shadow-[0_20px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_40px_rgba(255,255,255,0.08)]">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 dark:text-white">
-                    {item.name}
-                  </h3>
-                  <p className="text-lg text-white-600 mb-6 dark:text-white-400">
-                    ${item.price.toFixed(2)} each
-                  </p>
+                <div className="flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      {item.name}
+                    </h3>
+                    <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                      ${item.price.toFixed(2)} each
+                    </p>
+                  </div>
 
-                  <div className="flex items-center gap-4 mt-auto ">
+                  <div className="flex items-center gap-4">
                     <button
                       onClick={() => decreaseQuantity(item.id)}
                       disabled={item.quantity === 1}
@@ -117,7 +124,7 @@ const Cart = () => {
               {/* Subtotal */}
               <div className="flex justify-between">
                 <span>Subtotal ({totalItems} items)</span>
-                <span className="font-bold">${getTotalPrice().toFixed(2)}</span>
+                <span className="font-bold">${totalPrice.toFixed(2)}</span>
               </div>
 
               {/* Shipping */}
@@ -128,18 +135,18 @@ const Cart = () => {
 
               {/* Total */}
               <div className="border-t-2 border-gray-300 pt-6">
-                <div className="flex justify-between text-3xl font-bold dark:text-white">
+                <div className="flex justify-between text-3xl font-bold">
                   <span>Total</span>
-                  <span className="text-gray-900 dark:text-white">
-                    ${getTotalPrice().toFixed(2)}
+                  <span className="text-primary">
+                    ${totalPrice.toFixed(2)}
                   </span>
                 </div>
               </div>
             </div>
 
             {/* Checkout Button */}
-            <Link to="/checkout" className="block w-full">
-              <button className="w-full mt-10 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xl font-bold py-5 rounded-full shadow-lg hover:opacity-90 transition-all duration-300 active:scale-95">
+            <Link to="/checkout" className="block w-full mt-10">
+              <button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xl font-bold py-5 rounded-full shadow-lg hover:opacity-90 transition-all duration-300 active:scale-95">
                 Proceed to Checkout
               </button>
             </Link>
@@ -147,7 +154,7 @@ const Cart = () => {
             {/* Continue Shopping */}
             <Link
               to="/categorypage"
-              className="block text-center mt-8 text-gray-600 hover:text-gray-900 font-medium flex items-center justify-center gap-2 transition dark:text-gray-400 dark:hover:text-white"
+              className="block text-center mt-8 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-medium flex items-center justify-center gap-2 transition"
             >
               <FaArrowLeft />
               Continue Shopping
