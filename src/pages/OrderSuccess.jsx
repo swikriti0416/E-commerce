@@ -1,4 +1,4 @@
-// src/pages/OrderSuccess.jsx
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaCheckCircle, FaHome } from "react-icons/fa";
