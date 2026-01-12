@@ -3,6 +3,8 @@
 A responsive **E‑Commerce Web Application** built with **React** and **Vite**.  
 This project demonstrates core shopping features like product listings, browsing, and cart functionality, and serves as a foundation for building a full-featured online store.
 
+
+
 ---
 
 ## 🔍 Overview
