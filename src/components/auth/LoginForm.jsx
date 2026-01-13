@@ -24,7 +24,7 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-5 py-3 rounded-lg border border-gray-300 focus:border-primary outline-none"
+            className="w-full px-5 py-3 rounded-lg border border-gray-300 focus:border-primary outline-none dark:bg-gray-800 dark:text-white transition"
           />
           <button
             type="submit"

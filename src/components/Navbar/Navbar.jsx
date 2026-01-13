@@ -69,7 +69,7 @@ const Navbar = () => {
                   className="flex items-center gap-2 hover:text-primary transition"
                 >
                   <FaUser className="text-2xl" />
-                  <span className="hidden sm:inline">My Account</span>
+                  <span className="hidden sm:inline"></span>
                 </button>
 
                 <Link to="/wishlist" className="relative group">
@@ -142,7 +142,7 @@ const Navbar = () => {
 
               <button
                 onClick={handleLogout}
-                className="w-full mt-4 bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition flex items-center justify-center gap-2"
+                className="w-full mt-4 bg-red-700 text-white py-3 rounded-lg hover:bg-red-600 transition flex items-center justify-center gap-2"
               >
                 <FaArrowRightFromBracket />
                 Logout
