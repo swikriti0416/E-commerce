@@ -97,7 +97,7 @@ const Navbar = () => {
 
       {/* Sliding Drawer */}
       <div
-        className={`fixed inset-y-0 right-0 w-80 bg-white dark:bg-gray-800 shadow-2xl transform transition-transform duration-300 z-50 ${
+        className={`fixed inset-y-0 right-0 z-50 w-full sm:w-[390px] bg-white dark:bg-gray-800 dark:border-gray-800 transform transition-transform duration-500 ease-in-out ${
           drawerOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
