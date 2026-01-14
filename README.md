@@ -20,6 +20,9 @@ This E-commerce project provides a simple and scalable frontend for an online sh
 
 ---
 
+
+
+
 ## 🧰 Tech Stack
 
 | Feature | Technology |
