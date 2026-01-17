@@ -50,6 +50,8 @@ Search Functionality: Quickly find products by name
 
 Shopping Cart: Add or remove items from the cart
 
+
+
 Pagination: Navigate through large product lists easily
 
 Notifications: Toast messages for actions like adding or removing items
